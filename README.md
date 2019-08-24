@@ -16,3 +16,9 @@ To install this game follow these steps:
   Disk Space: 2 GB or more.
   Operating systems: Windows 7 or later, macOS, and Linux.
   Display Size: atleast 720p.
+
+# How to play?
+The controls are simple: Just press space to jump. You can also use the Up arrow key.
+
+# Issues
+If you encounter any bugs or issues with the game please tell me. I will be more than happy to listen.
