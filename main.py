@@ -16,6 +16,24 @@ class FlappyBird:
 		pass
 
 
+
+
+
+
+
+
+
+# ############################################# #
+# ### DO NOT TOUCH ANY CODE BELOW THIS LINE ### #
+# ############################################# #
+
+
+
+
+
+
+
+
 def main():
 	global running
 
