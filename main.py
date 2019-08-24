@@ -15,14 +15,14 @@ class FlappyBird:
 		space = keys[pygame.K_SPACE]
 		up = keys[pygame.K_UP]
 		if space or up:
-			if self.player.y_vel > 7:
+			if self.player.y_vel > 4:
 				self.player.flap()
 
 		self.player.update()
 
 		if self.player.y - self.player.radius < 0:
 			self.player.y_vel = 0
-		if self.player.y - self.player.radius*3 > width:
+		if self.player.y - self.player.radius*5 > width:
 			global running
 			running = False
 
