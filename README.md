@@ -10,3 +10,9 @@ To install this game follow these steps:
   4. Drag the icon of the folder to Command Prompt/Terminal and type "python3 main.py"
 
 **If you get any errors please just copy paste the error into Google and press enter.**
+
+# System Requirements
+  Processors: Intel Atom® processor or Intel® Core™ i3 processor.
+  Disk Space: 2 GB or more.
+  Operating systems: Windows 7 or later, macOS, and Linux.
+  Display Size: atleast 720p.
