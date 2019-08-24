@@ -1,5 +1,6 @@
 # Import classes and variables from other files
 from uni_vars import *
+from bird import Bird
 
 # Import modules
 import pygame
@@ -7,13 +8,26 @@ import pygame
 
 class FlappyBird:
 	def start(self):
-		pass
+		self.player = Bird((width/2, height/2))
 
 	def logic(self):
-		pass
+		keys = pygame.key.get_pressed()
+		space = keys[pygame.K_SPACE]
+		up = keys[pygame.K_UP]
+		if space or up:
+			if self.player.y_vel > 7:
+				self.player.flap()
+
+		self.player.update()
+
+		if self.player.y - self.player.radius < 0:
+			self.player.y_vel = 0
+		if self.player.y - self.player.radius*3 > width:
+			global running
+			running = False
 
 	def render(self):
-		pass
+		self.player.render()
 
 
 
