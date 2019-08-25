@@ -1,6 +1,7 @@
 # Import classes and variables from other files
 from uni_vars import *
 from bird import Bird
+from pipe import Pipe
 
 # Import modules
 import pygame
@@ -9,8 +10,12 @@ import pygame
 class FlappyBird:
 	def start(self):
 		self.player = Bird((width/2, height/2))
+		self.pipes = []
+
+		self.pipes.append(Pipe((width, 0)))
 
 	def logic(self):
+		global running
 		keys = pygame.key.get_pressed()
 		space = keys[pygame.K_SPACE]
 		up = keys[pygame.K_UP]
@@ -20,13 +25,22 @@ class FlappyBird:
 
 		self.player.update()
 
+		for pipe in self.pipes:
+			if pipe.collision(self.player):
+				running = False
+
+			pipe.update(self.player.x_vel)
+
 		if self.player.y - self.player.radius < 0:
 			self.player.y_vel = 0
+			self.player.y = self.player.radius
 		if self.player.y - self.player.radius*5 > width:
-			global running
 			running = False
 
 	def render(self):
+		for pipe in self.pipes:
+			pipe.render()
+
 		self.player.render()
 
 
