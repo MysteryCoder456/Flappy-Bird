@@ -15,7 +15,14 @@ class FlappyBird:
 		self.pipes.append(Pipe((width, 0)))
 
 	def logic(self):
-		global running
+		global running, framecount
+		framecount += 1
+		self.player.x_vel += 0.0001
+
+		# Obstacle regeneration
+		if framecount % 200 == 0:
+			self.pipes.append(Pipe((width, 0)))
+
 		keys = pygame.key.get_pressed()
 		space = keys[pygame.K_SPACE]
 		up = keys[pygame.K_UP]

@@ -11,3 +11,4 @@ pygame.display.set_caption(title)
 
 # gameplay variables
 gravity = 1
+framecount = 0

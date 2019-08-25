@@ -5,7 +5,7 @@ import pygame
 
 class Pipe:
 	def __init__(self, pos):
-		self.spacing = 170
+		self.spacing = 180
 
 		self.x = pos[0]
 		self.y1 = pos[1]
