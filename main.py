@@ -1,10 +1,12 @@
-# Import classes and variables from other files
-from uni_vars import *
-from bird import Bird
-from pipe import Pipe
-
 # Import modules
 import pygame
+pygame.init()
+pygame.font.init()
+
+# Import classes and variables from other files
+from uni_vars import width, height, win, running, framecount, message, clock, FPS, background
+from bird import Bird
+from pipe import Pipe
 
 
 class FlappyBird:
@@ -23,6 +25,10 @@ class FlappyBird:
 		if framecount % 200 == 0:
 			self.pipes.append(Pipe((width, 0)))
 
+		# Scoring
+		if framecount % 10 == 0:
+			self.player.score += 1
+
 		keys = pygame.key.get_pressed()
 		space = keys[pygame.K_SPACE]
 		up = keys[pygame.K_UP]
@@ -38,6 +44,9 @@ class FlappyBird:
 
 			pipe.update(self.player.x_vel)
 
+			if pipe.x + pipe.width < 0:
+				self.pipes.remove(pipe)
+
 		if self.player.y - self.player.radius < 0:
 			self.player.y_vel = 0
 			self.player.y = self.player.radius
@@ -49,7 +58,7 @@ class FlappyBird:
 			pipe.render()
 
 		self.player.render()
-
+		message(str(self.player.score), (255, 255, 255), (width/2-50*0.35, 5))
 
 
 

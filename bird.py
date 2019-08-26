@@ -14,6 +14,7 @@ class Bird:
 		self.y_vel = 0
 		self.flap_power = 15
 		self.collider = pygame.Rect((self.draw_x, self.draw_y, self.radius*2, self.radius*2))
+		self.score = 0
 
 	def flap(self):
 		self.y_vel = -self.flap_power
